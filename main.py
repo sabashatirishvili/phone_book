@@ -12,16 +12,19 @@ def is_valid(num):
     
 
 def add_number(name, num):
+    """ფუნქცია, რომელიც ნომრებში ჩაამატებს ახალ ნომერს"""
     if is_valid(num):
         phone_dir[name] = num
     else:
         return
 
 def remove_number(name):
+    """ფუნქცია, რომელიც ნომრებიდან ამოშლის ნომერს"""
     if phone_dir and name in phone_dir:
         del phone_dir[name]
 
 def display_numbers():
+    """ფუნქცია, რომელიც ბეჭდავს ნომრების წიგნში არსებულ ყველა ნომერს"""
     if phone_dir:
         for name, number in phone_dir.items():
             print(f"{name}: {number}")
@@ -29,6 +32,7 @@ def display_numbers():
         print("ნომრების სია ცარიელია.")
 
 def clear_terminal():
+    """ფუნქცია, რმელიც ასუფთავებს ტერმინალს"""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def main():
